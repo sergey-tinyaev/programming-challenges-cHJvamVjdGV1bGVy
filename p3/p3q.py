@@ -2,7 +2,7 @@ import math
 from typing import Generator
 
 
-def gen_primes_up_to(n: int) -> Generator[int, int, None]:
+def gen_primes_up_to(n: int) -> Generator[int, None, None]:
     """Return a generator that yields primes up to N using Sieve of Erathothene"""
 
     if n >= 2:
