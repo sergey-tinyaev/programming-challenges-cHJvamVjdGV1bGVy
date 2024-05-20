@@ -1,11 +1,11 @@
-def advance(x):
+def advance(x: int) -> int:
     """Return next element in Collatz sequence."""
     # Time complexity: O(1)
     # Extra space complexity: O(1)
     return (x // 2) if x % 2 == 0 else (3 * x + 1)
 
 
-def walk(x, cache):
+def walk(x: int, cache: dict[int, int]) -> int:
     """Return length of Collatz chain for a given starting number."""
     # Time complexity: O(?) - unable to correctly deduce complexity.
     # Extra space complexity: O(?) - unable to correctly deduce complexity.
@@ -14,7 +14,7 @@ def walk(x, cache):
     return cache[x]
 
 
-def solve(n):
+def solve(n: int) -> int:
     """Return starting number in [1..n] range that produces the longest
     Collatz chain."""
     # Time complexity: O(n * ?) - unable to correctly deduce complexity.
