@@ -23,7 +23,6 @@ def test_gen_primes_up_to():
     ]
 
 
-
 def test_solve():
     assert 29 == p3q.solve(13195)
     assert 6857 == p3q.solve(600851475143)

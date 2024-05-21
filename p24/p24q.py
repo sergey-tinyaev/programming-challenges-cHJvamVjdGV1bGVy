@@ -12,7 +12,8 @@ def to_int(t: tuple[int, ...]) -> int:
 
 
 def solve() -> int:
-    """Return 1_000_000th lexographic permutation of digits {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}."""
+    """Return 1_000_000th lexographic permutation of digits {0, 1, 2, 3, 4, 5,
+    6, 7, 8, 9}."""
     # Time complexity: O(n) => O(1), cause n is fixed.
     # Extra space complexity: O(1).
     for i, p in enumerate(it.permutations(range(10), 10), start=1):
