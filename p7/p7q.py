@@ -2,7 +2,6 @@ import common.generator as cg
 
 # Upper limit was taken from https://en.wikipedia.org/wiki/Prime-counting_function.
 MAX_NUMBER = 10**6
-MAX_SIEVE_SIZE = (MAX_NUMBER - 1) // 2
 
 
 def solve(n):
