@@ -1,15 +1,11 @@
+import common.number as cn
+
+
 def is_palindrome(n: int) -> bool:
     """Return true if n is palindromic number, and false otherwise."""
     # Runtime analysis: O(lg(n))
     # Extra space: O(lg(n)) - to hold digits in a list
-    digits = []
-
-    if n == 0:
-        digits = [0]
-    else:
-        while n:
-            n, digit = divmod(n, 10)
-            digits.append(digit)
+    digits = cn.get_digits(n)
 
     return all(
         digits[i] == digits[len(digits) - 1 - i] for i in range(len(digits) // 2)
