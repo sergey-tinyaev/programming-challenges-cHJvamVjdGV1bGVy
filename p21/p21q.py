@@ -1,19 +1,5 @@
 import math
-
-
-def gen_primes(n: int) -> list[int]:
-    result = [2]
-
-    sieve_size = (n - 1) // 2
-    sieve = [True] * sieve_size
-
-    for i in range(sieve_size):
-        if sieve[i]:
-            result.append(2 * i + 3)
-            for j in range(2 * i * (i + 3) + 3, sieve_size, 2 * i + 3):
-                sieve[j] = False
-
-    return result
+import common.generator as cg
 
 
 def sum_of_proper_divisors(n: int, primes: list[int]) -> int:
@@ -51,7 +37,7 @@ def solve(n: int) -> int:
     # Extra space complexity: O(n + sqrt(n) / log(n)) => O(n), where
     #   O(sqrt(n) / log(n)) to hold primes;
     #   O(n) to hold divisor sums.
-    primes = gen_primes(math.ceil(math.sqrt(n)) + 1)
+    primes = list(cg.primes(math.ceil(math.sqrt(n)) + 1))
 
     proper_divisor_sums = [sum_of_proper_divisors(i, primes) for i in range(n + 1)]
 
