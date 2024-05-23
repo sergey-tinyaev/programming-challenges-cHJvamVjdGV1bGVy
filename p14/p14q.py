@@ -17,8 +17,8 @@ def walk(x: int, cache: dict[int, int]) -> int:
 def solve(n: int) -> int:
     """Return starting number in [1..n] range that produces the longest
     Collatz chain."""
-    # Time complexity: O(n * ?) - unable to correctly deduce complexity.
-    # Extra space complexity: O(?) - unable to correctly deduce complexity.
+    # Time: O(n * ?) - unable to correctly deduce complexity.
+    # Space: O(?) - unable to correctly deduce complexity.
     cache = {1: 1}
 
     max_chain_count, result = 1, 1

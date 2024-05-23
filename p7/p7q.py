@@ -4,10 +4,10 @@ import common.generator as cg
 MAX_NUMBER = 10**6
 
 
-def solve(n):
+def solve(n: int) -> int:
     """Return n-th (1-based) prime number below 1_000_000."""
     # Time complexity: O(n).
-    # Space complexity: O(1) - a big constant is still a constant.
+    # Space complexity: O(MAX_NUMBER) - to generate primes.
     if n > 78498:
         raise ValueError("n should be less than or equal to 78498.")
 

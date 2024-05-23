@@ -4,16 +4,16 @@ ADJUSTMENT_BY_MONTH_LEAP_YEAR = [3, 1, 3, 2, 3, 2, 3, 3, 2, 3, 2, 3]
 
 def is_leap_year(year: int) -> bool:
     """Return whether target year is leap."""
-    # Time complexity: O(1)
-    # Extra space complexity: O(1)
+    # Time: O(1).
+    # Space: O(1).
     return (year % 4 == 0) and ((year % 100 != 0) or (year % 400 == 0))
 
 
 def sunday_count(target_year: int) -> int:
     """Return number of times Sunday fell on the first of the month from Jan 1, 1900
     till Jan 1 of the target year."""
-    # Time complexity: O(n), n - number of months between two dates.
-    # Extra space complexity: O(1).
+    # Time: O(n), where n - number of months between two dates.
+    # Space: O(1).
     x, result = 6, 0
 
     for year in range(1900, target_year):

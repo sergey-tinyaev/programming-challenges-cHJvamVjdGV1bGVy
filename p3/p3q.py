@@ -3,14 +3,13 @@ import common.generator as cg
 
 
 def solve(n: int) -> int:
-    """Return the highest prime factor of N."""
+    """Return the greatest prime factor of n."""
 
-    # Running time analysis: O(N * log(log(N)) + sqrt(N) / ln(N)), where
-    #   N * log(log(N)) - is runtime asymptotic to generate primes,
-    #   sqrt(N) / ln(N) - the number of prime factors less than or equal N.
+    # Time: O(sqrt(n) * log(log(n)) + sqrt(n) / ln(n)), where
+    #   O(sqrt(n) * log(log(n))) - to generate primes;
+    #   O(sqrt(n) / ln(n)) - to iterate over prime factors less than or equal sqrt(n).
     #
-    # Extra Space analysis: O(sqrt(N))
-    #   used by underlying sieve algorithm to generate primes.
+    # Space: O(sqrt(n)) - used by sieve to generate primes.
     upper_bound_for_factor = math.ceil(math.sqrt(n)) + 1
     for prime_factor in cg.primes(upper_bound_for_factor):
         if prime_factor > n:

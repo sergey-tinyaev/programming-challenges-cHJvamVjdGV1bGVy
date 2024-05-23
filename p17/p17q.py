@@ -6,8 +6,8 @@ SPECIAL_CASES = {11: 6, 12: 6, 13: 8, 14: 8, 15: 7, 16: 7, 17: 9, 18: 8, 19: 8}
 
 def count_letters(n: int) -> int:
     """Return number of letters in British spelling of n."""
-    # Time complexity: O(lg(n))
-    # Extra space complexity: O(1)
+    # Time: O(lg(n)).
+    # Space: O(1).
     if n == 0:
         return 4
 
@@ -38,6 +38,6 @@ def count_letters(n: int) -> int:
 
 def solve(n: int) -> int:
     """Return number of letters in British spelling of numbers in range [1..n]."""
-    # Time complexity: O(n * lg(n))
-    # Extra space complexity: O(1)
+    # Time: O(n * lg(n)).
+    # Space: O(1).
     return sum(map(count_letters, range(1, n + 1)))

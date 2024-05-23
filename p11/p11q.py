@@ -1,8 +1,8 @@
 def solve(grid: list[list[int]]) -> int:
     """Returns greatest product of four adjacent numbers in the same direction
     (up, down, left, right, or diagonally) in provided grid."""
-    # Time complexity: O(N * M * T)
-    # Extra space complexity: O(1)
+    # Time: O(N * M * T).
+    # Space: O(1).
     N, M, T = len(grid), len(grid[0]), 4
 
     result = 0

@@ -14,4 +14,5 @@ def test_to_int():
 
 
 def test_solve():
-    assert 2783915460 == p24q.solve()
+    assert 123456789 == p24q.solve(1)
+    assert 2783915460 == p24q.solve(1_000_000)

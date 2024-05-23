@@ -3,8 +3,8 @@ import common.number as cn
 
 def is_palindrome(n: int) -> bool:
     """Return true if n is palindromic number, and false otherwise."""
-    # Runtime analysis: O(lg(n))
-    # Extra space: O(lg(n)) - to hold digits in a list
+    # Time: O(lg(n)).
+    # Space: O(lg(n)).
     digits = cn.get_digits(n)
 
     return all(
@@ -12,11 +12,11 @@ def is_palindrome(n: int) -> bool:
     )
 
 
-def solve(n, m):
+def solve(n: int, m: int) -> int:
     """Return largest polyndrome that is a result of multiplication of n and m
     digit numbers."""
-    # Runtime analysis: O(10**(n + m) * (n + m))
-    # Extra space: O(10**(n + m)) - to hold intermediate list of
+    # Time: O(10^(n + m) * (n + m)).
+    # Space: O(n + m) - to keep a single list of maximum number of digits at any point.
     return max(
         x
         for x in (

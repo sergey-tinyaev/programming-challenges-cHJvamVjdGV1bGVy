@@ -1,7 +1,7 @@
 def solve(grid: list[list[int]]) -> int:
     """Return maximal path in triangular grid from top to any bottom cell."""
-    # Time complexity: O(N^2)
-    # Extra space complexity: O(1)
+    # Time: O(N^2).
+    # Space: O(1).
     N = len(grid)
     if N >= 2:
         for i in range(len(grid) - 2, -1, -1):
