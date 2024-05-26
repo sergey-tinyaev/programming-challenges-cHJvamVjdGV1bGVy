@@ -1,20 +1,45 @@
-import math
-
-
-def count_rectangles(n, m):
-    """Return total number of rectangles in n x m grid."""
-    # Time: O(1).
-    # Space: O(1).
-    return n * m * (n + 1) * (m + 1) // 4
-
-
 def solve(n: int) -> int:
     """Return area of the grid with number of rectangles closest to n."""
-    # Time: O(n).
+    # Time: O(sqrt(n)).
     # Space: O(1).
-    r = 1 + math.ceil(math.sqrt(n)) if n > 100 else n
-    return min(
-        (abs(count_rectangles(i, j) - n), i * j)
-        for i in range(1, r + 1)
-        for j in range(1, r + 1)
-    )[1]
+
+    i = j = x = 1
+    min_diff, result = n - 1, 1
+
+    while x < n:
+        j += 1
+        x += j
+
+    diff = x - n
+    if diff < min_diff:
+        min_diff, result = diff, i * j
+
+    diff = n + j - x
+    if diff < min_diff:
+        min_diff, result = diff, i * (j - 1)
+
+    if min_diff == 0:
+        return result
+
+    m = 1
+    while j > 1:
+        i += 1
+        m += i
+        x = m * x // (m - i)
+
+        while x > n:
+            x -= m * j
+            j -= 1
+
+        diff = n - x
+        if diff < min_diff:
+            min_diff, result = diff, i * j
+
+        diff = x + m * (j + 1) - n
+        if diff < min_diff:
+            min_diff, result = diff, i * (j + 1)
+
+        if min_diff == 0:
+            return result
+
+    return result
