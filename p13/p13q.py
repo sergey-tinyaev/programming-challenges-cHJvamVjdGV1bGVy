@@ -1,5 +1,6 @@
-def solve(numbers: list[str]) -> int:
+def solve(numbers: list[str]) -> str:
     """Return sum of numbers."""
     # Time: O(n).
     # Space: O(1).
-    return sum(map(int, numbers))
+    result = sum(map(int, numbers))
+    return str(result)[:10]
