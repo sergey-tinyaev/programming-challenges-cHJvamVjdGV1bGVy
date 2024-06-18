@@ -2,6 +2,9 @@ from typing import Generator
 
 
 def primes(upper_bound: int) -> Generator[int, None, None]:
+    """Return primes up to (and including) upper_bound."""
+    # Time: O(n*log(log(n))).
+    # Space: O(n).
     if upper_bound >= 2:
         yield 2
 
